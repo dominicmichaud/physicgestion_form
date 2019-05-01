@@ -1,0 +1,2112 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WebSite</title>
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+    <meta name="description" content="Website description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="assets/flatly-bootstrap.min.css">    
+    <link rel="stylesheet" href="js/vendor/jqueryui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/vendor/jqueryui/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="css/main.css?v=20171215">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body class="antialiasing">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">Vous utilisez présentement une version <strong>obsolète</strong> de ce navigateur web. Veuillez <a href="http://browsehappy.com/">mettre à jour votre navigateur </a> pour mieux consulter ce site.</p>
+    <![endif]-->
+
+    <div class="header-wrapper">
+        <header id="header" class="">
+            <img src="img/logo-full.png" alt="">
+        </header><!-- /header -->
+        <nav class="nav nav-pills nav-justified">
+            <div class="nav-item nav-link nav-prev">Précédent</div>
+            <div id="validate-section" class="nav-item nav-link nav-next">Suivant</div>
+        </nav>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <div class="state_handler">
+        <div class="messages">
+          <p></p>
+        </div>
+    </div>
+
+    <div class="carousel-wrapper">        
+        <form action="" id="subscribe_form" class="subscribe-form" novalidate>
+            <div id="carouselExampleControls" class="carousel slide">
+                <div class="carousel-inner">
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active validate-section validate-0" data-index="0">                        
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    
+                                    <h2>Informations personnelles <span class="text-danger">[Obligatoire]</span></h2>
+
+                                    <!-- firstname -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Prénom <span class="text-danger">*</span></label>
+                                                <div class="input-group-custom">
+                                                    <input type="text" class="form-control required" name="user_firstname" id="user_firstname">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- lastname -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Nom <span class="text-danger">*</span></label>
+                                                <div class="input-group-custom">
+                                                    <input type="text" class="form-control required" name="user_lastname" id="user_lastname">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- email -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Adresse courriel <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="email" class="form-control required" name="user_email" id="user_email">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">@</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- birthdate -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Date de naissance <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom date" id="birthdate">
+                                                    <input type="text" class="form-control required" name="user_birth" id="user_birth" data-field="date">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- job -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Profession <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control required" name="user_job" id="user_job">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Address -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Adresse <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control required" name="user_address" id="user_address">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- City -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Ville <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control required" name="user_city" id="user_city">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Zipcode -->
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <label for="">Code postal <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control required" name="user_zip" id="user_zip">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone home -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Téléphone (maison ou cellulaire) <span class="text-danger">*</span></label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control phone-mask required" name="user_home_phone" id="user_home_phone">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+
+                                    <!-- Phone cell -->
+                                    <!-- <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Téléphone (cellulaire)</label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control phone-mask" name="user_cell_phone" id="user_cell_phone">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- Phone work -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Téléphone (travail) <span class="text-info">[optionnel]</span> </label>
+                                                <div class="input-group input-group-custom mb-2 mb-sm-0">
+                                                    <input type="text" class="form-control phone-mask" name="user_work_phone" id="user_work_phone">
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                                                
+                    </div> <!-- End Carousel Slide 0 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="1">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                     <h2>Problèmes de santé <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- Hypertension -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Hypertension</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_hypertension" id="has_hypertension">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Est-ce héréditaire?</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="hypertension_hereditary" id="hypertension_hereditary">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Si oui, prenez-vous un médicament? Lequel?</label>
+                                                <input type="text" class="form-control" name="hypertension_meds" id="hypertension_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Diabète -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Diabète</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_diabetes" id="has_diabetes">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Est-ce héréditaire?</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="diabetes_hereditary" id="diabetes_hereditary">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Hypothyroïdie -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Hypothyroïdie</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_hypothyroid" id="has_hypothyroid">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Est-ce héréditaire?</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="hypothyroid_hereditary" id="hypothyroid_hereditary">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Si oui, prenez-vous un médicament? Lequel?</label>
+                                                <input type="text" class="form-control" name="hypothyroid_meds" id="hypothyroid_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Problèmes cardiaques -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Problèmes cardiaques</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_cardio_problems" id="has_cardio_problems">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Depuis quand <span class="text-info">[optionnel]</span></label> <br>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control add-margin-btm" name="cardio_problems_since_date" id="cardio_problems_since_date">
+
+                                                <label for="">Élaborez <span class="text-info">[optionnel]</span></label>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="cardio_problems_description" id="cardio_problems_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Hypercholestérolémie -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Hypercholestérolémie</label> 
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_hypercholesterolemia" id="has_hypercholesterolemia">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Médication <span class="text-info">[optionnel]</span></label>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control" name="hypercholesterolemia_meds" id="hypercholesterolemia_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Asthme -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Asthme</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_asthma" id="has_asthma">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Médication <span class="text-info">[optionnel]</span></label>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control" name="asthma_meds" id="asthma_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 1 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="2">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                   <h2>Problèmes d’ordre digestif <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- Côlon irritable -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Côlon irritable</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_irritable_bowel" id="has_irritable_bowel">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Maladie de Crohn -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Maladie de Crohn</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_crohn_disease" id="has_crohn_disease">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Constipation -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Constipation</label> <br>
+                                                <select class="form-control" name="has_constipation" id="has_constipation">
+                                                    <option value="">Choisir...</option>
+                                                    <option value="Oui">Oui</option>
+                                                    <option value="Non">Non</option>
+                                                    <option value="À l'occasion">À l’occasion</option>
+                                                    <option value="Souvent">Souvent</option>
+                                                    <option value="Tout le temps">Tout le temps</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Diarrhée -->
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-3">
+                                            <div class="form-group">
+                                                <label for="">Diarrhée</label> <br>
+                                                <select class="form-control" name="has_diarrhea" id="has_diarrhea">
+                                                    <option value="">Choisir...</option>
+                                                    <option value="Oui">Oui</option>
+                                                    <option value="Non">Non</option>
+                                                    <option value="À l'occasion">À l’occasion</option>
+                                                    <option value="Souvent">Souvent</option>
+                                                    <option value="Tout le temps">Tout le temps</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Ballonnement -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Ballonnement</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_bloating" id="has_bloating">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui, y a-t-il des aliments qui provoquent ces ballonnement?</label>
+                                                <textarea class="form-control" cols="30" rows="3" name="bloating_description" id="bloating_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Brûlement d’estomac -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Brûlement d’estomac</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_heartburn" id="has_heartburn">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Médication</label>
+                                                <input type="text" class="form-control" name="heartburn_meds" id="heartburn_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Intolérances alimentaires -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Intolérances alimentaires</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_food_intolerances" id="has_food_intolerances">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui laquelle ou lesquelles?</label>
+                                                <textarea class="form-control" cols="30" rows="3" name="food_intolerances_description" id="food_intolerances_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Allergies alimentaires -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Allergies alimentaires</label> <br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_food_allergies" id="has_food_allergies">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui laquelle ou lesquelles?</label>
+                                                <textarea class="form-control" cols="30" rows="3" name="food_allergies_description" id="food_allergies_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 2 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="3">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2>Santé mentale <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- Problème d’anxiété occasionnel -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Problème d’anxiété occasionnel</label> <br>
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="anxiety_options" id="anxiety_inlineRadio1" value="Fréquent"> <span>Fréquent</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="anxiety_options" id="anxiety_inlineRadio2" value="TAG">
+                                                        <span>TAG</span>
+                                                    </label>
+                                                </div>
+                                                <br>
+
+                                                <label for="">Si oui, prenez-vous un médicament, lequel?</label>
+                                                <input type="text" class="form-control" name="anxiety_meds" id="anxiety_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Bipolarité -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Bipolarité</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_bipolarity" id="has_bipolarity">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui, prenez-vous un médicament, lequel?</label>
+                                                <input type="text" class="form-control" name="bipolarity_meds" id="bipolarity_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Dépression -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Dépression</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_despression" id="has_despression">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui, prenez-vous un médicament, lequel?</label>
+                                                <input type="text" class="form-control" name="despression_meds" id="despression_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- TDA -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">TDA</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_TDA" id="has_TDA">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Si oui, prenez-vous un médicament, lequel?</label>
+                                                <input type="text" class="form-control" name="TDA_meds" id="TDA_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- TDAH -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">TDAH</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="has_TDAH" id="has_TDAH">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Si oui, prenez-vous un médicament, lequel?</label>
+                                                <input type="text" class="form-control" name="TDAH_meds" id="TDAH_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 3 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="4">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2>Problèmes articulaire <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- Chevilles -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Chevilles</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="ankles_problems_description" id="ankles_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="ankles_problems_mouvements" id="ankles_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="ankles_problems_exercises" id="ankles_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Genoux -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Genoux</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="knees_problems_description" id="knees_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="knees_problems_mouvements" id="knees_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="knees_problems_exercises" id="knees_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Hanche -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Hanche</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="hip_problems_description" id="hip_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="hip_problems_mouvements" id="hip_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="hip_problems_exercises" id="hip_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Dos (lombaire) -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Dos (lombaire)</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_lombar_problems_description" id="back_lombar_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_lombar_problems_mouvements" id="back_lombar_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_lombar_problems_exercises" id="back_lombar_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Dos (thoracique) -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Dos (thoracique)</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_thoracic_problems_description" id="back_thoracic_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_thoracic_problems_mouvements" id="back_thoracic_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_thoracic_problems_exercises" id="back_thoracic_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Dos (cervical) -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Dos (cervical)</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_cervical_problems_description" id="back_cervical_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_cervical_problems_mouvements" id="back_cervical_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="back_cervical_problems_exercises" id="back_cervical_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Épaules -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Épaules</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="shoulders_problems_description" id="shoulders_problems_description"></textarea>
+                                                <br>
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="shoulders_problems_mouvements" id="shoulders_problems_mouvements"></textarea>
+                                                <br>
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="shoulders_problems_exercises" id="shoulders_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Coudes -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Coudes</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="elbows_problems_description" id="elbows_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="elbows_problems_mouvements" id="elbows_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="elbows_problems_exercises" id="elbows_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Poignets -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Poignets</label>
+                                                <p class="text-muted">Blessure ou douleur</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="wrists_problems_description" id="wrists_problems_description"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Quel(s) mouvement(s) provoque cette douleur?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="wrists_problems_mouvements" id="wrists_problems_mouvements"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Y a-t-il des un ou des exercice(s) que cette problématique vous empêche(nt) de faire?</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="wrists_problems_exercises" id="wrists_problems_exercises"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Autre -->
+                                    <div class="row">
+                                        <div class="col-md-7 col-lg-5">
+                                            <div class="form-group">
+                                                <label for="">Autre</label>
+                                                <p class="text-muted">Médication</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="other_problems_meds" id="other_problems_meds"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Contraceptif</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="contraceptive_meds" id="contraceptive_meds"></textarea>
+                                                <br>
+
+                                                <p class="text-muted">Autres problème de santé</p>
+                                                <textarea class="form-control" cols="30" rows="3" name="other_health_problems" id="other_health_problems"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 4 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item validate-section validate-5" data-index="5">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2>Sommeil <span class="text-danger">[Obligatoire]</span></h2>
+
+                                    <!-- Heure de couché -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure de couché la plupart du temps <span class="text-danger">*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">                                                
+                                                <div class="input-group-custom">
+                                                    <select class="form-control add-margin-btm required" name="bedtime_hour" id="bedtime_hour">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Vous endormez-vous facilement? <span class="text-danger">*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">                                                
+                                                <div class="input-group-custom">
+                                                    <select class="form-control add-margin-btm required" name="falling_asleep_easy" id="falling_asleep_easy">
+                                                      <option value="">Choisir...</option>
+                                                      <option value="Oui">Oui</option>
+                                                      <option value="Non">Non</option>
+                                                      <option value="Ça dépend des soirs">Ça dépend des soirs</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                   
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Vous réveillez-vous souvent durant la nuit?</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="waking_up_night" id="waking_up_night">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Restez-vous éveillé longtemps? <span class="text-info">[optionnel]</span> </label> <br>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control" name="waking_up_night_long" id="waking_up_night_long">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Heure du levé -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure du levé la plupart du temps <span class="text-danger">*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">                                                
+                                                <div class="input-group-custom">              
+                                                    <select class="form-control add-margin-btm required" name="wakeup_hour" id="wakeup_hour">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                  
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Vous levez-vous facilement? <span class="text-danger">*</span></label> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">                                                             
+                                                    <select class="form-control add-margin-btm required" name="waking_up_morning" id="waking_up_morning">
+                                                      <option value="">Choisir...</option>
+                                                      <option value="Oui">Oui</option>
+                                                      <option value="Non">Non</option>
+                                                      <option value="Ça dépend des matins">Ça dépend des matins</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                   
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Avez-vous l’impression de ne jamais vous sentir reposé, peu importe le nombre d’heure de sommeil que vous avez? <span class="text-danger">*</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">                                        
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">
+                                                    <select class="form-control required" name="feeling_tired_morning" id="feeling_tired_morning">
+                                                      <option value="">Choisir...</option>
+                                                      <option value="Oui">Oui</option>
+                                                      <option value="Non">Non</option>
+                                                      <option value="À l’occasion">À l’occasion</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                   
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- médication pour dormir -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Devez-vous prendre une médication pour&nbsp;dormir? <span class="text-info">[optionnel]</span></label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="needs_sleeping_meds" id="needs_sleeping_meds">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">si oui, laquelle? <span class="text-info">[optionnel]</span></label> <br>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control" name="sleeping_meds" id="sleeping_meds">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 5 -->                        
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="6">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2>Objectif <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- Quel est votre objectif -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group add-margin-btm">
+                                                <label for="">Quel est votre objectif</label>
+                                                <select class="form-control" multiple="multiple" name="which_objective" id="which_objective">
+                                                    <option value="Diminution du pourcentage de graisse">Diminution du pourcentage de graisse</option>
+                                                    <option value="Gain de tonus musculaire">Gain de tonus musculaire</option>
+                                                    <option value="Amélioration du cardio-vasculaire">Amélioration du cardio-vasculaire</option>
+                                                    <option value="Préparation en but d’un sports">Préparation en but d’un sports</option>
+                                                    <option value="Gain de masse musculaire">Gain de masse musculaire</option>
+                                                    <option value="Suivi nutritionnel seulement">Suivi nutritionnel seulement</option>                  
+                                                </select>
+                                                <input type="hidden" id="which_objective_hidden" name="which_objective_hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Si en préparation en but d’un sports, lequel?</label>
+                                                <input type="text" class="form-control add-margin-btm" name="objective_sport_which" id="objective_sport_which">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Si en préparation pour des tests physiques,&nbsp;lesquels?</label>
+                                                <input type="text" class="form-control" name="objective_physical_tests_which" id="objective_physical_tests_which">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- préparation en vue d’un championnat de physique -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Sinon, est-ce plutôt une préparation en vue d’un championnat de physique</label>
+                                                <select class="form-control col-md-6" name="physical_championship" id="physical_championship" multiple="multiple">
+                                                  <option value="">Choisir...</option>
+                                                  <option value="Culturisme">Culturisme</option>
+                                                  <option value="Bikini">Bikini</option>
+                                                  <option value="Figure">Figure</option>
+                                                  <option value="Men’s physique">Men’s physique</option>
+                                                  <option value="Women’s physique">Women’s physique</option>
+                                                  <option value="Fitness">Fitness</option>                  
+                                                </select>
+                                                <input type="hidden" id="physical_championship_hidden" name="physical_championship_hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Vous entraînez-vous présentement? -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Vous entraînez-vous présentement?</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="training_right_now" id="training_right_now">
+                                                        <span class="text-muted">Cochez si oui</span>
+                                                    </label>
+                                                </div> 
+
+                                                <label for="">Depuis combien de temps? <span class="text-info">[optionnel]</span></label>
+                                                <p class="text-muted">seulement si cocher oui</p>
+                                                <input type="text" class="form-control col-md-6" name="training_time" id="training_time">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Quel genre d’entraînement pratiquez-vous? -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Quel genre d’entraînement pratiquez-vous?</label>
+                                                <select class="form-control col-md-6" multiple="multiple" name="training_which" id="training_which">
+                                                  <option value="">Choisir...</option>
+                                                  <option value="Musculation avec cardio">Musculation avec cardio</option>
+                                                  <option value="Musculation seulement">Musculation seulement</option>
+                                                  <option value="Crossfit">Crossfit</option>
+                                                  <option value="Course à pieds">Course à pieds</option>
+                                                  <option value="Sports de combat">Sports de combat</option>
+                                                  <option value="Yoga ou variation">Yoga ou variation</option>
+                                                  <option value="Plein-air">Plein-air</option>
+                                                  <option value="Cardio seulement">Cardio seulement</option>
+                                                  <option value="Autres">Autres</option>
+                                                </select>
+                                                <input type="hidden" id="training_which_hidden" name="training_which_hidden">
+
+                                                <label class="add-margin-top" for="">séances/semaine</label>
+                                                <input type="text" class="form-control col-md-6" name="training_seances" id="training_seances">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- centre d’entraînement -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Nommez le centre d’entraînement que vous&nbsp;fréquentez</label>
+                                                <input type="text" class="form-control" name="training_centre_name" id="training_centre_name">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- End Carousel Slide 6 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item" data-index="7">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2>Si vous ne vous entraînez pas en ce moment <span class="text-muted">[optionnel]</span></h2>
+
+                                    <!-- disponibilité -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Quelle est votre disponibilité pour un éventuel programme d’entraînement?</label>
+                                                <p class="text-muted">séances/semaine</p>
+                                                <input type="text" class="form-control col-md-6" name="training_disponibilities" id="training_disponibilities">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Où avez-vous l'intention de vous entraîner -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Où avez-vous l'intention de vous entraîner</label><br>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="training_where_Options" id="training_where_home" value="Maison"> <span>Maison</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="training_where_Options" id="training_where_gym" value="Gym"> <span>Gym</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="training_where_Options" id="training_where_gym_house" value="Gym et maison"> <span>Gym et maison</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="training_where_Options" id="training_where_dontknow" value="Je ne sais pas pour le moment"> <span>Je ne sais pas pour le moment</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    
+                                    <!-- Si vous vous abonnez à un gym -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Si vous vous abonnez à un gym, lequel?</label>
+                                                <input type="text" class="form-control" name="which_gym" id="which_gym">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- entraînez à la maison, nomenclatures des équipements -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Si vous vous entraînez à la maison, faites la nomenclatures des équipements dont vous&nbsp;disposez</label>
+                                                <textarea cols="30" rows="3" class="form-control" name="home_training_equipment_list" id="home_training_equipment_list"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 7 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item validate-section validate-8" data-index="8">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2 class="remove-marg-btm">Journal alimentaire <span class="text-danger">[Obligatoire]</span></h2>
+                                    <p class="text-info add-margin-btm">
+                                        Mentionnez les repas ou collations les plus fréquentes que vous mangez.<br> N’oubliez pas de mentionner ce que vous y buvez également
+                                    </p>
+
+                                    <!-- Heure de levé / alimentaire -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure de levé</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">                                                
+                                                    <select class="form-control add-margin-btm required" name="nutrition_wakeup_time" id="nutrition_wakeup_time">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Heure de déjeuner -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure de déjeuner</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">
+                                                    <select class="form-control required add-margin-btm" name="nutrition_breakfast_time" id="nutrition_breakfast_time">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>                   
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Déjeuner -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group add-margin-btm">
+                                                <label for="">Déjeuner</label>
+                                                <div class="input-group-custom">               
+                                                    <textarea cols="30" rows="3" class="form-control required" name="nutrition_breakfast_description" id="nutrition_breakfast_description"></textarea>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collation de l’avant-midi -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Collation de l’avant-midi <span class="text-info">[optionnel]</span> </label>
+                                                <textarea cols="30" rows="3" class="form-control" name="nutrition_beforenoon_description" id="nutrition_beforenoon_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Heure du dîner -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure du dîner</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">           
+                                                    <select class="form-control required add-margin-btm" name="nutrition_dinner_time" id="nutrition_dinner_time">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dîner -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Dîner</label>
+                                                <div class="input-group-custom">               
+                                                    <textarea cols="30" rows="3" class="form-control required add-margin-btm" name="nutrition_dinner_description" id="nutrition_dinner_description"></textarea>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collation de l’après-midi -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Collation de l’après-midi <span class="text-info">[optionnel]</span></label>
+                                                <textarea cols="30" rows="3" class="form-control" name="nutrition_afternoon_snack" id="nutrition_afternoon_snack"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Heure du souper -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure du souper</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">                
+                                                    <select class="form-control required add-margin-btm" name="nutrition_supper_time" id="nutrition_supper_time">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Souper -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Souper</label>
+                                                <div class="input-group-custom">               
+                                                    <textarea cols="30" rows="3" class="form-control required add-margin-btm" name="nutrition_supper_description" id="nutrition_supper_description"></textarea>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Collation de la soirée -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Collation de la soirée <span class="text-info">[optionnel]</span></label>
+                                                <textarea cols="30" rows="3" class="form-control add-margin-btm" name="nutrition_latenight_snack" id="nutrition_latenight_snack"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Heure du couché -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Heure du couché</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">            
+                                                    <select class="form-control required" name="nutrition_bedtime_time" id="nutrition_bedtime_time">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="00:00">00:00</option>
+                                                        <option value="00:30">00:30</option>
+                                                        <option value="01:00">01:00</option>
+                                                        <option value="01:30">01:30</option>
+                                                        <option value="02:00">02:00</option>
+                                                        <option value="02:30">02:30</option>
+                                                        <option value="03:00">03:00</option>
+                                                        <option value="03:30">03:30</option>
+                                                        <option value="04:00">04:00</option>
+                                                        <option value="04:30">04:30</option>
+                                                        <option value="05:00">05:00</option>
+                                                        <option value="05:30">05:30</option>
+                                                        <option value="06:00">06:00</option>
+                                                        <option value="06:30">06:30</option>
+                                                        <option value="07:00">07:00</option>
+                                                        <option value="07:30">07:30</option>
+                                                        <option value="08:00">08:00</option>
+                                                        <option value="08:30">08:30</option>
+                                                        <option value="09:00">09:00</option>
+                                                        <option value="09:30">09:30</option>
+                                                        <option value="10:00">10:00</option>
+                                                        <option value="10:30">10:30</option>
+                                                        <option value="11:00">11:00</option>
+                                                        <option value="11:30">11:30</option>
+                                                        <option value="12:00">12:00</option>
+                                                        <option value="12:30">12:30</option>
+                                                        <option value="13:00">13:00</option>
+                                                        <option value="13:30">13:30</option>
+                                                        <option value="14:00">14:00</option>
+                                                        <option value="14:30">14:30</option>
+                                                        <option value="15:00">15:00</option>
+                                                        <option value="15:30">15:30</option>
+                                                        <option value="16:00">16:00</option>
+                                                        <option value="16:30">16:30</option>
+                                                        <option value="17:00">17:00</option>
+                                                        <option value="17:30">17:30</option>
+                                                        <option value="18:00">18:00</option>
+                                                        <option value="18:30">18:30</option>
+                                                        <option value="19:00">19:00</option>
+                                                        <option value="19:30">19:30</option>
+                                                        <option value="20:00">20:00</option>
+                                                        <option value="20:30">20:30</option>
+                                                        <option value="21:00">21:00</option>
+                                                        <option value="21:30">21:30</option>
+                                                        <option value="22:00">22:00</option>
+                                                        <option value="22:30">22:30</option>
+                                                        <option value="23:00">23:00</option>
+                                                        <option value="23:30">23:30</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 8 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item validate-section validate-9" data-index="9">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 remove-marg-btm">
+
+                                    <h2 class="remove-marg-btm">Journal alimentaire (suite) <span class="text-danger">[Obligatoire]</span></h2>
+                                    <p style="margin-bottom:8px;" class="text-muted">Consommation des liquides en dehors des repas</p>
+                                    <p class="text-info add-margin-btm">[Cochez au moins une des cases]</p>
+
+                                    <!-- Boisson gazeuse -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                  <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_softdrink" id="nutrition_liquid_softdrink">
+                                                        <span>Boisson gazeuse</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                  </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_softdrink_quantity" id="nutrition_liquid_softdrink_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Eau -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                  <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_water" id="nutrition_liquid_water">
+                                                        <span>Eau</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                  </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_water_quantity" id="nutrition_liquid_water_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Thé ou tisane -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_tea" id="nutrition_liquid_tea">
+                                                        <span>Thé ou tisane</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_tea_quantity" id="nutrition_liquid_tea_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Café -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_coffee" id="nutrition_liquid_coffee">
+                                                        <span>Café</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_coffee_quantity" id="nutrition_liquid_coffee_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Boisson énergétique -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_energydrink" id="nutrition_liquid_energydrink">
+                                                        <span>Boisson énergétique</span>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_energydrink_quantity" id="nutrition_liquid_energydrink_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Alcool -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_alcool" id="nutrition_liquid_alcool">
+                                                        <span>Alcool</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_alcool_quantity" id="nutrition_liquid_alcool_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Jus de fruits -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-5">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="Oui" name="nutrition_liquid_juice" id="nutrition_liquid_juice">
+                                                        <span>Jus de fruits</span> <br>
+                                                        <span class="text-muted">Cochez pour oui</span>
+                                                    </label>
+                                                </div>
+
+                                                <label for="">Quantité par jour</label>
+                                                <input type="text" class="form-control col-md-4" name="nutrition_liquid_juice_quantity" id="nutrition_liquid_juice_quantity">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Suppléments alimentaires -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">                               
+                                                <label for="">Suppléments alimentaires <span class="text-info">[optionnel]</span></label>
+                                                <p class="text-muted">Lesquelles et quelle dose?</p>
+                                                <textarea cols="30" rows="3" class="form-control" name="nutrition_nutritional_supplements_description" id="nutrition_nutritional_supplements_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Autres suppléments -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Autres <span class="text-info">[optionnel]</span></label>                
+                                                <textarea cols="30" rows="3" class="form-control" name="nutrition_other_supplements_description" id="nutrition_other_supplements_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Carousel Slide 9 -->
+
+                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+                    <div class="carousel-item submit-frame bg-success" data-index="10">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="text-container">
+                                        <h1>C'est presque terminé!</h1>
+                                        <h2>Il ne reste plus qu'à soumettre vos <br> réponses grâce au bouton ci-dessous.</h2>
+                                        <button class="btn btn-info btn-lg submit-form-btn" type="submit">
+                                            <i class="fa fa-fw fa-refresh fa-spin process-send"></i>
+                                            <i class="fa fa-paper-plane success-send" aria-hidden="true"></i>
+                                            <i class="fa fa-frown-o failed-send" aria-hidden="true"></i>
+                                            <span class="btn-message">Soumettre</span>
+                                        </button>
+
+                                        <p class="processs-msg"></p>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div> <!-- End Carousel Inner -->  
+            </div> <!-- End Carousel -->
+        </form> <!-- End Form -->        
+    </div> <!-- End Carousel wrapper -->
+                                                                                
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/vendor/jqueryui/jquery-ui.min.js"></script>
+    <script src="js/vendor/jqueryui/datepicker-fr.js"></script>
+    <!-- <script src="js/vendor/jquery-3.2.1.min.map"></script> -->
+    <script src="js/vendor/popper.min.js"></script>
+    <script src="js/vendor/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/bs4/js/bootstrap.min.js"></script>    
+    <script src="js/vendor/jquery.mask.min.js"></script>
+    <script src="js/vendor/multiselect/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+   (function(){
+      emailjs.init("user_2rj7g5naXYhOteHmHCvfd");
+   })();
+</script>
+    <script src="js/main.js?v=20170508"></script>
+    <script src="js/custom_form_validation.js?v=20171215"></script>
+    
+    <!--GOOGLE ANALYTICS-->
+</body>
+</html>
