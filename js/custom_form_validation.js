@@ -48,14 +48,15 @@ $(function () {
 		emailjs.sendForm(service_id, template_id, '#subscribe_form')
 			.then(function (data) {
 				//On success, show message and and enable user visual feedback
-				// console.log('success');
+				console.log('success');
 				$.settings.send_btn.find('.btn-message').html('succès!');
 				$.settings.msg.html("Merci! Votre demande d'inscription à été envoyée avec succès.<br>Nous vous contacterons dans les meilleurs délais.").addClass('show');
 				$.settings.send_btn.removeClass('sending').addClass('send-success');
 			}, function (data) {
 				if (data.status === 400) {
 					//On error, show message and and enable user visual feedback
-					//console.log('failed');
+					console.log('failed');
+					console.log('error', data);
 					$.settings.send_btn.find('.btn-message').html('erreur');
 					$.settings.msg.html("Désolé, une erreur est survenue lors de l'envoi.<br>Veuillez rafraîchir votre navigateur et réessayer.<br>Si le problème persiste, veuillez contacter l'administrateur du&nbsp;site.").addClass('show');
 					$.settings.send_btn.removeClass('sending').addClass('send-failed');
