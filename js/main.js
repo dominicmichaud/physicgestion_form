@@ -213,3 +213,18 @@ function handleResponse(msg, state) {
         }, 500)
     }, 3000);
 }
+
+function weightConverter(valNum) {
+    var x = document.getElementById("weightOption").value;
+    if(weightOption === lbs){
+        document.getElementById("outputKilograms").innerHTML=valNum/2.2046;}
+
+    else if(weightOption === kg) {
+        document.getElementById("outputKilograms").innerHTML=valNum + x
+    }
+
+    
+    // document.getElementById("outputKilograms").innerHTML=valNum/2.2046;}
+    // var x = document.getElementById("weightOption").value;
+    // console.log(valNum)
+  
