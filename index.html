@@ -96,7 +96,7 @@
                                                 <label for="">Taille <span class="text-danger">*</span></label>
                                                 <div class="input-group-custom">
                                                     <input type="number" class="form-control required" name="user_height" id="user_height"placeholder="Metre">
-                                                    <select name="heightOption" id="heightOption">
+                                                    <select class="required" name="heightOption" id="heightOption">
                                                         <option value="">Choisir ...</option>
                                                       <option value="metre" id="m">M</option>
                                                       <option value="pied" id="ft">ft</option>
@@ -107,6 +107,7 @@
                                                     </span>
                                                 </div>
                                                 <p>Metre: <span id="meterOutput"></span></p>
+                                                <input type="hidden" id="height_conversion" name="height_conversion" />
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +118,7 @@
                                                 <label for="">Poids <span class="text-danger">*</span></label>
                                                 <div class="input-group-custom">
                                                     <input type="number" class="form-control required" name="user_weight" id="user_weight">
-                                                    <select name="weightOption" id="weightOption">
+                                                    <select class="required" name="weightOption" id="weightOption">
                                                         <option value="">Choisir ...</option>
                                                       <option value="lbs" id="lbs">lbs</option>
                                                       <option value="kg" id="kg">kg</option>
@@ -130,6 +131,7 @@
                                                     </span>
                                                 </div> 
                                                 <p>Kilogramme <span id="outputKilograms"></span></p>
+                                                <input type="hidden" id="weight_conversion" name="weight_conversion" />
                                             </div>                                            
                                         </div>
                                     </div>

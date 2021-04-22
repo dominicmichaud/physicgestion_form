@@ -237,20 +237,30 @@ function handleResponse(msg, state) {
 
 function weightConverter(valNum) {
     var numOption = document.getElementById("weightOption").value;
+    var converted_value;
 
     if (numOption === "lbs") {
         $("#outputKilograms").html((parseInt(valNum) / 2.2046).toFixed(3));
+        converted_value = (parseInt(valNum) / 2.2046).toFixed(3);
     } else if (numOption === "kg") {
-        $("#outputKilograms").html(parseInt(valNum))
+        $("#outputKilograms").html(parseInt(valNum));
+        converted_value = valNum;
     }
+
+    $('input[type=hidden]#weight_conversion').val(converted_value);
 }
 
 function heightConverter(valNum) {
     var height = document.getElementById("heightOption").value;
+    var converted_value;
 
     if (height === "metre") {
-        $("#meterOutput").html(valNum)
+        $("#meterOutput").html(valNum);
+        converted_value = valNum;
     } else if (height === "pied") {
         $("#meterOutput").html((parseInt(valNum) / 3.2808).toFixed(3));
+        converted_value = (parseInt(valNum) / 3.2808).toFixed(3);
     }
+
+    $('input[type=hidden]#height_conversion').val(converted_value);
 }
