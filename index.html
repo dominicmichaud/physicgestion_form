@@ -96,33 +96,44 @@
                                                 <label for="">Taille <span class="text-danger">*</span></label>
                                                 <div class="input-group-custom">
                                                     <input type="number" class="form-control required" name="user_height" id="user_height"placeholder="Metre">
+                                                    <select name="heightOption" id="heightOption">
+                                                        <option value="">Choisir ...</option>
+                                                      <option value="metre" id="m">M</option>
+                                                      <option value="pied" id="ft">ft</option>
+                                                    </select>
                                                     <span class="validate-icon">
                                                         <i class="fa fa-check-circle" aria-hidden="true"></i>
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
+                                                <p>Metre: <span id="meterOutput"></span></p>
+                                                <br></p>
                                             </div>
                                         </div>
                                     </div>
                                       <!-- weight -->
                                       <div class="row">
                                         <div class="col-md-4 col-lg-3">
-                                            <div class="form-group">
+                                            <div class="form-group ">
                                                 <label for="">Poids <span class="text-danger">*</span></label>
                                                 <div class="input-group-custom">
                                                     <input type="number" class="form-control required" name="user_weight" id="user_weight">
                                                     <select name="weightOption" id="weightOption">
+                                                        <option value="">Choisir ...</option>
                                                       <option value="lbs" id="lbs">lbs</option>
                                                       <option value="kg" id="kg">kg</option>
                                                     </select>
-                                                    <br>
-                                                    <p>Kilograms: <span id="outputKilograms"></span></p>
+                                                    <br><br>
+                                                    
                                                     <span class="validate-icon">
                                                         <i class="fa fa-check-circle" aria-hidden="true"></i>
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i>
                                                     </span>
-                                                </div>
+                                                </div> 
+                                                <p>Kilogramme <span id="outputKilograms"></span></p>
+<br>
                                             </div>
+                                            
                                         </div>
                                     </div>
 
@@ -2065,7 +2076,7 @@
                                     </div>
 
                                     <hr>
-
+                                    
                                     <!-- Suppléments alimentaires -->
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4">
@@ -2141,7 +2152,7 @@
 		  emailjs.init("user_2rj7g5naXYhOteHmHCvfd");
 	   })();
 	</script>
-    <script src="js/main.js?v=20170508"></script>
+    <script src="js/main.js?v=20210508"></script>
     <script src="js/custom_form_validation.js?v=20200716"></script>
     
     <!--GOOGLE ANALYTICS-->

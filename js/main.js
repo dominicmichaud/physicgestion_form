@@ -128,7 +128,31 @@ $(function(){
           updateProgress(parseInt($globalVars.prev_index));
         }
     });
+// onchange for weight
+    $('select#weightOption').on('change', function(){
+        var weightValue= $("input#user_weight").val()
+        weightConverter(weightValue)
 
+    })
+    
+    $('input#user_weight').on('change', function(){
+        var weightValue= $("input#user_weight").val()
+        weightConverter(weightValue)
+
+    })
+
+    // onchange for height
+    $('select#heightOption').on('change', function(){
+        var heightValue= $("input#user_height").val()
+        heightConverter(heightValue)
+
+    })
+    
+    $('input#user_height').on('change', function(){
+        var heightValue= $("input#user_height").val()
+        heightConverter(heightValue)
+
+    })
     //Window resize event
     window.onresize = myResize;
     myResize();
@@ -215,16 +239,29 @@ function handleResponse(msg, state) {
 }
 
 function weightConverter(valNum) {
-    var x = document.getElementById("weightOption").value;
-    if(weightOption === lbs){
-        document.getElementById("outputKilograms").innerHTML=valNum/2.2046;}
-
-    else if(weightOption === kg) {
-        document.getElementById("outputKilograms").innerHTML=valNum + x
+    var numOption = document.getElementById("weightOption").value;
+    
+    if( numOption=== "lbs"){
+        $("#outputKilograms").html((parseInt(valNum)/2.2046).toFixed(3));
+        
     }
 
+    else if(numOption === "kg") {
+       $("#outputKilograms").html(parseInt(valNum))
+    }
+}
+
+function heightConverter(valNum) {
+    var height = document.getElementById("heightOption").value;
+    console.log(height)
+    if( height=== "metre"){
+       $("#meterOutput").html(valNum)
+    }
+
+    else if(height === "pied") {
+        $("#meterOutput").html((parseInt(valNum)/3.2808).toFixed(3));
+    }
+}
     
-    // document.getElementById("outputKilograms").innerHTML=valNum/2.2046;}
-    // var x = document.getElementById("weightOption").value;
-    // console.log(valNum)
+ 
   
