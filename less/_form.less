@@ -1,24 +1,24 @@
-@roboto: 'Roboto', sans-serif;
+@roboto: "Roboto", sans-serif;
 
-body{
+body {
   font-family: @roboto;
 }
 
-.header-wrapper{
+.header-wrapper {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  background: #FFF;
+  background: #fff;
 }
 
-header{  
-  text-align:center;
-  padding:15px;
-  
-  img{
-    width:350px;
+header {
+  text-align: center;
+  padding: 15px;
+
+  img {
+    width: 350px;
   }
 }
 
@@ -49,235 +49,238 @@ header{
   }
 }
 
-.carousel-wrapper{
+.carousel-wrapper {
   margin-top: 160px;
 }
 
 .carousel-item {
   padding: 25px;
   padding-bottom: 75px;
-  
-  &.submit-frame{
+
+  &.submit-frame {
     height: 100vh;
-    color: #FFF;
+    color: #fff;
     text-align: center;
-    
-    .text-container{
+
+    .text-container {
       margin-top: 55px;
-      
-     h1{
+
+      h1 {
         font-size: 3.5em;
         text-transform: uppercase;
       }
 
-      h2{
-        color: #FFF;
+      h2 {
+        color: #fff;
         line-height: 1.25;
       }
 
-      p.processs-msg{
-        opacity:0;
-        display:none;
-        transition:all .25s ease .25s;
+      p.processs-msg {
+        opacity: 0;
+        display: none;
+        transition: all 0.25s ease 0.25s;
         font-size: 1.5em;
         margin-top: 45px;
         line-height: 1.25;
-        
-        &.show{
-          display:block;
+
+        &.show {
+          display: block;
           opacity: 1;
         }
       }
 
-      button{
+      button {
         padding: 12px 55px;
         cursor: pointer;
-        
-        i.fa{
-          position: relative;          
-          transition: all .25s ease;
-          display:none;
+
+        i.fa {
+          position: relative;
+          transition: all 0.25s ease;
+          display: none;
           opacity: 0;
         }
 
-        span.btn-message{
-          transition: all .15s ease;
+        span.btn-message {
+          transition: all 0.15s ease;
         }
 
-        &.sending{
+        &.sending {
           background-color: #868686;
           border-color: #868686;
-    
-          i.fa.process-send{
+
+          i.fa.process-send {
             display: inline-block;
             opacity: 1;
           }
 
-          span.btn-message{
-            display:none;
-            opacity:0;
+          span.btn-message {
+            display: none;
+            opacity: 0;
             text-transform: uppercase;
           }
         }
 
-        &.send-success{
+        &.send-success {
           background: #138246;
           border-color: #138246;
-          
-          i.fa.success-send{
+
+          i.fa.success-send {
             display: inline-block;
             opacity: 1;
             left: -12px;
           }
 
-          span.btn-message{
+          span.btn-message {
             display: inline-block;
             opacity: 1;
           }
         }
 
-        &.send-failed{
+        &.send-failed {
           background-color: #ff1800;
           border-color: #ff1800;
-          
-          i.fa.failed-send{
+
+          i.fa.failed-send {
             display: inline-block;
             opacity: 1;
             left: -12px;
           }
 
-          span.btn-message{
+          span.btn-message {
             display: inline-block;
             opacity: 1;
           }
         }
       }
-    }    
+    }
   }
-  
-  h2{
-    text-transform: uppercase;    
-    font-size:1.5em;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
     font-weight: 500;
     color: #2c3e50;
     margin-bottom: 45px;
     margin-top: 25px;
-    
-    span{
-      font-size: .75em;
+
+    span {
+      font-size: 0.75em;
       font-weight: normal;
     }
 
-    &.remove-marg-btm{
+    &.remove-marg-btm {
       margin-bottom: 8px;
     }
   }
 
-  p{
-    &.add-margin-btm{
+  p {
+    &.add-margin-btm {
       margin-bottom: 45px;
     }
   }
 
-  .form-group{
+  .form-group {
     margin-bottom: 1.25rem;
-    
-    &.add-margin-btm{
-      margin-bottom: 12px !important; 
+
+    &.add-margin-btm {
+      margin-bottom: 12px !important;
     }
-    
-    label{
+
+    label {
       color: #232323;
       font-weight: 500;
       margin-bottom: 5px;
-      
-      &.add-margin-top{
+
+      &.add-margin-top {
         margin-top: 12px;
       }
     }
 
-    input, select, textarea{
-      &.add-margin-btm{
-        margin-bottom: 12px; 
+    input,
+    select,
+    textarea {
+      &.add-margin-btm {
+        margin-bottom: 12px;
       }
     }
 
-    #user_zip{
+    #user_zip {
       text-transform: uppercase;
     }
 
-    .form-check{
-      label.form-check-label{
-        span.text-muted, span{
+    .form-check {
+      label.form-check-label {
+        span.text-muted,
+        span {
           vertical-align: sub;
         }
       }
     }
 
-    .form-check-inline{
-      label.form-check-label{
-        span{
+    .form-check-inline {
+      label.form-check-label {
+        span {
           vertical-align: sub;
         }
       }
     }
 
-    .input-group-custom{
-      position: relative;      
-      
-      .validate-icon{
+    .input-group-custom {
+      position: relative;
+
+      .validate-icon {
         position: absolute;
         right: -25px;
-        top:20%;
-        opacity:0;
-        transition: all .25s ease;
-        
-        i.fa{
+        top: 20%;
+        opacity: 0;
+        transition: all 0.25s ease;
+
+        i.fa {
           font-size: 1.2em;
-          display:none;
+          display: none;
         }
       }
-      
-      .required.invalid{
-        &+ .validate-icon{
+
+      .required.invalid {
+        & ~ .validate-icon {
           opacity: 1;
-          
-          i.fa-times-circle{            
-            display:block;
-            color: #E74C3C;           
+
+          i.fa-times-circle {
+            display: block;
+            color: #e74c3c;
           }
         }
       }
 
-      .required.valid{
-        &+ .validate-icon{
+      .required.valid {
+        & ~ .validate-icon {
           opacity: 1;
-          
-          i.fa-check-circle{            
-            display:block;
-            color: #18BC9C;            
+
+          i.fa-check-circle {
+            display: block;
+            color: #18bc9c;
           }
         }
       }
     }
 
-    .form-control{
+    .form-control {
       color: #485252;
     }
 
-    .multiselect-native-select{
-      .btn-group{
-        button.dropdown-toggle{
-          span.multiselect-selected-text{
-            color: #FFF;
+    .multiselect-native-select {
+      .btn-group {
+        button.dropdown-toggle {
+          span.multiselect-selected-text {
+            color: #fff;
           }
         }
       }
     }
   }
 
-  .remove-marg-btm{
-    .form-group{
+  .remove-marg-btm {
+    .form-group {
       margin-bottom: 0px;
     }
   }
