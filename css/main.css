@@ -4,9 +4,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     display: flex;
     margin: 10px;
 }
-#weightOption{
-    margin: 5px;
-}
+
 #outputKilograms{
     color: #232323;
     margin-bottom: 5px;
