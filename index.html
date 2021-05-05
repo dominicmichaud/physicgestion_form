@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="js/vendor/jqueryui/jquery-ui.min.css">
     <link rel="stylesheet" href="js/vendor/jqueryui/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="css/bootstrap-multiselect.css">
-    <link rel="stylesheet" href="css/main.css?v=20201216">
+    <link rel="stylesheet" href="css/main.css?v=20201219">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body class="antialiasing">
@@ -94,19 +94,19 @@
                                         <div class="col-md-4 col-lg-3">
                                             <div class="form-group">
                                                 <label for="">Taille <span class="text-danger">*</span></label>
-                                                <div class="input-group-custom">
-                                                    <input type="number" class="form-control required" name="user_height" id="user_height"placeholder="Metre">
+                                                <div class="input-group-custom imc-control">
+                                                    <input type="number" class="form-control required" name="user_height" id="user_height" min="1">
                                                     <select class="required" name="heightOption" id="heightOption">
                                                         <option value="">Choisir ...</option>
-                                                      <option value="metre" id="m">M</option>
-                                                      <option value="pied" id="ft">ft</option>
+                                                        <option value="metre" id="m">M</option>
+                                                        <option value="pied" id="ft">ft</option>
                                                     </select>
                                                     <span class="validate-icon">
                                                         <i class="fa fa-check-circle" aria-hidden="true"></i>
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
-                                                <p>Metre: <span id="meterOutput"></span></p>
+                                                <p class="imc-dynamic">Metre: <span id="meterOutput"></span></p>
                                                 <input type="hidden" id="height_conversion" name="height_conversion" />
                                             </div>
                                         </div>
@@ -116,12 +116,12 @@
                                         <div class="col-md-4 col-lg-3">
                                             <div class="form-group ">
                                                 <label for="">Poids <span class="text-danger">*</span></label>
-                                                <div class="input-group-custom">
-                                                    <input type="number" class="form-control required" name="user_weight" id="user_weight">
+                                                <div class="input-group-custom imc-control">
+                                                    <input type="number" class="form-control required" name="user_weight" id="user_weight" min="1">
                                                     <select class="required" name="weightOption" id="weightOption">
                                                         <option value="">Choisir ...</option>
-                                                      <option value="lbs" id="lbs">lbs</option>
-                                                      <option value="kg" id="kg">kg</option>
+                                                        <option value="lbs" id="lbs">lbs</option>
+                                                        <option value="kg" id="kg">kg</option>
                                                     </select>
                                                     <br><br>
                                                     
@@ -130,18 +130,14 @@
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i>
                                                     </span>
                                                 </div> 
-                                                <p>Kilogramme <span id="outputKilograms"></span></p>
-                                                <input type="hidden" id="weight_conversion" name="weight_conversion" />
+                                                <p class="imc-dynamic">Kilogramme <span id="outputKilograms"></span></p>
+                                                <input type="hidden" id="weight_conversion" name="weight_conversion" />                                                
                                                 <br/>
-                                                <input class="btn btn-success" type="button" onClick="imc_result()" Value="Calcul IMC" />
-                                                <br/>
-                                                <br/>
-                                                <label>Votre IMC: <span type="number" id="imcResult" title="imcResult"></span></label>
+                                                <label class="alert alert-success w-100">Votre IMC: <span type="number" id="imcResult"></span></label>
+                                                <input type="hidden" id="imc-result-value" name="imcResultValue">
                                             </div>                                            
                                         </div>
                                     </div>
-
-                                    <hr>
 
                                     <!-- email -->
                                     <div class="row">
@@ -2244,7 +2240,7 @@
 		  emailjs.init("user_2rj7g5naXYhOteHmHCvfd");
 	   })();
 	</script>
-    <script src="js/main.js?v=20210510"></script>
+    <script src="js/main.js?v=20210515"></script>
     <script src="js/custom_form_validation.js?v=20200716"></script>
     
     <!--GOOGLE ANALYTICS-->

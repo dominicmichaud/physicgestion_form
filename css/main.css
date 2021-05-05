@@ -160,9 +160,21 @@ table {
   display: flex;
   margin: 10px;
 }
+.input-group-custom.imc-control input[type="number"] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group-custom.imc-control select {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 #outputKilograms {
   color: #232323;
   margin-bottom: 5px;
+}
+.imc-dynamic {
+  margin-left: 10px;
+  font-size: 14px;
 }
 body {
   font-family: "Roboto", sans-serif;

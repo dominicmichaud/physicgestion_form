@@ -132,23 +132,47 @@ $(function () {
     // onchange for weight
     $('select#weightOption').on('change', function () {
         var weightValue = $("input#user_weight").val();
-        weightConverter(weightValue);
+
+        if ($(this).val() == "") {
+            resetIMC();
+        } else {
+            weightConverter(weightValue);
+            calculate_imc();
+        }
     });
 
     $('input#user_weight').on('change', function () {
-        var weightValue = $("input#user_weight").val();
-        weightConverter(weightValue);
+        var weightValue = $(this).val();
+
+        if (weightValue == "") {
+            resetIMC();
+        } else {
+            weightConverter(weightValue);
+            calculate_imc();
+        }
     });
 
     // onchange for height
     $('select#heightOption').on('change', function () {
         var heightValue = $("input#user_height").val();
-        heightConverter(heightValue);
+
+        if ($(this).val() == "") {
+            resetIMC();
+        } else {
+            heightConverter(heightValue);
+            calculate_imc();
+        }
     });
 
     $('input#user_height').on('change', function () {
-        var heightValue = $("input#user_height").val();
-        heightConverter(heightValue);
+        var heightValue = $(this).val();
+
+        if (heightValue == "") {
+            resetIMC();
+        } else {
+            heightConverter(heightValue);
+            calculate_imc();
+        }
     });
 
     //Window resize event
@@ -265,10 +289,19 @@ function heightConverter(valNum) {
     $('input[type=hidden]#height_conversion').val(converted_value);
 }
 
-function imc_result() {
-    var heightValue = document.getElementById("meterOutput").value;
-    var weightValue = document.getElementById("outputKilograms").value;
-    document.getElementById("imcResult").innerHTML = weightValue / ( heightValue * 2 );
+function calculate_imc() {
+    if ($("#meterOutput").text() !== "" && $("#outputKilograms").text() !== "") {
+        var heightValue = parseFloat($("#meterOutput").text());
+        var weightValue = parseFloat($("#outputKilograms").text());
+        var calculatedIMC = weightValue / (heightValue * 2);
+        $("#imcResult").text(calculatedIMC);
+        $('input[type=hidden]#imc-result-value').val(calculatedIMC);
+    }
+}
+
+function resetIMC() {
+    $("#imcResult").text("");
+    $('input[type=hidden]#imc-result-value').val("-1");
 }
 
 // function multiplyBy() {
