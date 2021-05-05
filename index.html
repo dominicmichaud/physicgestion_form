@@ -132,9 +132,16 @@
                                                 </div> 
                                                 <p>Kilogramme <span id="outputKilograms"></span></p>
                                                 <input type="hidden" id="weight_conversion" name="weight_conversion" />
+                                                <br/>
+                                                <input class="btn btn-success" type="button" onClick="imc_result()" Value="Calcul IMC" />
+                                                <br/>
+                                                <br/>
+                                                <label>Votre IMC: <span type="number" id="imcResult" title="imcResult"></span></label>
                                             </div>                                            
                                         </div>
                                     </div>
+
+                                    <hr>
 
                                     <!-- email -->
                                     <div class="row">
@@ -1483,6 +1490,92 @@
                                     <p class="text-info add-margin-btm">
                                         Mentionnez les repas ou collations les plus fréquentes que vous mangez.<br> N’oubliez pas de mentionner ce que vous y buvez également
                                     </p>
+
+                                    <!-- raisons de la prise de poids -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Si vous désirez baisser votre poids ou votre pourcentage de graisse, quel est ou quelles sont la ou les raisons qui ont fait en sorte que vous avez accumuler un surpoids?</label>
+                                                <textarea cols="30" rows="3" class="form-control" name="reason_overweight" id="reason_overweight"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Plaisir de manger -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="">Sur une échelle de 1 à 10, quelle note attribuez-vous à votre plaisir de manger?</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">
+                                                    <select class="form-control add-margin-btm required" name="food_lover_level" id="food_lover_level">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- methode pour realiser objectif -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">À votre avis, comment devriez-vous vous y prendre pour réaliser votre objectif. Y a-t-il une méthode que vous aimeriez essayer ou en laquelle vous avez plus confiance?</label>
+                                                <textarea cols="30" rows="3" class="form-control" name="method_target" id="method_target"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- État de prise de poids de l'entourage -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-group">
+                                                <label for="">Dans votre entourage immédiat (famille, amis, collègues de travail), comment considérez-vous la qualité des habitudes alimentaires des ces gens? Y a-t-il beaucoup de problèmes d’embonpoint autour de vous?<span class="text-danger">*</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2">
+                                            <div class="form-group">
+                                                <div class="input-group-custom">
+                                                    <select class="form-control required" name="weight_aroundme" id="weight_aroundme">
+                                                        <option value="">Choisir...</option>
+                                                        <option value="Oui">Oui</option>
+                                                        <option value="Non">Non</option>
+                                                    </select>
+                                                    <span class="validate-icon">
+                                                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
 
                                     <!-- Heure de levé / alimentaire -->
                                     <div class="row">

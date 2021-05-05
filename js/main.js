@@ -264,3 +264,22 @@ function heightConverter(valNum) {
 
     $('input[type=hidden]#height_conversion').val(converted_value);
 }
+
+function imc_result() {
+    var heightValue = document.getElementById("meterOutput").value;
+    var weightValue = document.getElementById("outputKilograms").value;
+    document.getElementById("imcResult").innerHTML = weightValue / ( heightValue * 2 );
+}
+
+// function multiplyBy() {
+//     num1 = document.getElementById("firstNumber").value;
+//     num2 = document.getElementById("secondNumber").value;
+//     document.getElementById("result").innerHTML = num1 * num2;
+// }
+//
+// function divideBy()
+// {
+//     num1 = document.getElementById("firstNumber").value;
+//     num2 = document.getElementById("secondNumber").value;
+//     document.getElementById("result").innerHTML = num1 / num2;
+// }
