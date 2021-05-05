@@ -169,11 +169,28 @@ table {
 .input-group-custom {
   display: flex;
   margin: 10px;
+
+  &.imc-control {
+    input[type="number"] {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    select {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
 }
 
 #outputKilograms {
   color: #232323;
   margin-bottom: 5px;
+}
+
+.imc-dynamic {
+  margin-left: 10px;
+  font-size: 14px;
 }
 
 @import "_form.less";
