@@ -161,12 +161,12 @@ table {
   margin: 10px;
 }
 .input-group-custom.imc-control input[type="number"] {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.input-group-custom.imc-control select {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.input-group-custom.imc-control select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 #outputKilograms {
   color: #232323;
